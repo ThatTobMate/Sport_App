@@ -15,19 +15,43 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'Devise',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
+  .config(['$stateProvider', '$urlRouterProvider',function ($routeProvider, $stateProvider, $urlRouterProvider) {
+
+    $stateProvider.state('about', {
+        url: '/about',
+        templateUrl: 'about.html',
         controller: 'AboutCtrl'
       })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+      // .state('login', {
+      //   url: '/login',
+      //   templateUrl: 'auth/_login.html',
+      //   controller: 'AuthCtrl',
+      //   onEnter: ['$state', 'Auth', function($state, Auth) {
+      //     Auth.currentUser().then(function (){
+      //       $state.go('home');
+      //     })
+      //   }]
+      // })
+      // .state('register', {
+      //   url: '/register',
+      //   templateUrl: 'auth/_register.html',
+      //   controller: 'AuthCtrl',
+      //   onEnter: ['$state', 'Auth', function($state, Auth) {
+      //     Auth.currentUser().then(function (){
+      //       $state.go('home');
+      //     })
+      //   }]
+      // });
+
+      // $routeProvider
+      //   .when('/about', {
+      //     templateUrl: 'views/about.html',
+      //     controller: 'AboutCtrl'
+      //   })
+
+    $urlRouterProvider.otherwise('about');
+  }])

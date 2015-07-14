@@ -7,6 +7,7 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
+gem 'devise', '~> 3.4.0'
 
 gem 'sqlite3'
 
