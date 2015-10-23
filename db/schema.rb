@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713200714) do
+ActiveRecord::Schema.define(version: 20150813085443) do
+
+  create_table "authentication_tokens", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "user_id"
+    t.datetime "last_used_at"
+    t.string   "ip_address"
+    t.string   "user_agent"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "authentication_tokens", ["user_id"], name: "index_authentication_tokens_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,8 +39,10 @@ ActiveRecord::Schema.define(version: 20150713200714) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.string   "authentication_token"
   end
 
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["username"], name: "index_users_on_username", unique: true

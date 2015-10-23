@@ -8,16 +8,22 @@
  * Controller of the sportsAppApp
  */
 angular.module('sportsAppApp')
-  .controller('MainCtrl', function ($scope, $http, $localStorage, User) {
-    // $scope.get = function(){
-      
-
-    // }
+  .controller('NavBarCtrl', function ($scope, $localStorage, User) {
 
     // User.currentUser().then(function(data){
-    //   // debugger;
-    //    $scope.user = data.data
+    //   if(data.data){
+    //     $scope.user = data.data
+    //   }
+       
     // })
+
+    // $scope.signedIn = function(){
+    //   if($scope.user){
+    //     return true;
+    //   }else{
+    //     return false;
+    //   };
+    // };
 
     // $scope.getUsers = function(){
     //   User.getUsers().then(function(data){
@@ -27,9 +33,8 @@ angular.module('sportsAppApp')
 
     // $scope.logout = function(){
     //   $localStorage.$reset();
-    //   $scope.user = {};
+    //   delete $scope.user
+    //   $scope.signedIn = false
     // }
-
-    // $scope.get()
 
   });

@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+
+
+
   scope '/api' do
-    devise_for :users
+    devise_for :users, defaults: { format: :json }, controllers: { sessions: "users/sessions" }
+    match 'users/the_current_user' => 'users#the_current_user', :via => [:get]
+    resources :users
   end
+  
+
+
 
   # get '/', to: redirect('/')
   # The priority is based upon order of creation: first created -> highest priority.

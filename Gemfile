@@ -7,10 +7,22 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-gem 'devise', '~> 3.4.0'
+gem 'simple_token_authentication', '~> 1.0'
+
+gem 'devise'
+
+gem 'tiddle'
+# gem 'devise_token_auth', '0.1.32.beta10'
+
+gem 'omniauth'
 
 gem 'sqlite3'
 
+gem 'pry-rails'
+
+# gem 'strong_parameters'
+
+gem 'responders', '~> 2.0'
 
 
 # To use ActiveModel has_secure_password

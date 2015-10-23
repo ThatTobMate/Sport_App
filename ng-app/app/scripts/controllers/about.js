@@ -14,4 +14,5 @@ angular.module('sportsAppApp')
       'AngularJS',
       'Karma'
     ];
+
   });
