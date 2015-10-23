@@ -21,17 +21,4 @@ function($scope, $state, $localStorage, $http, Auth){
     // });
   };
 
-  // $scope.register = function() {
-  //   console.log($scope.user)
-  //   Auth.register($scope.user).then(function(){
-  //     $state.go('home');
-  //   });
-  // };
-
-  // $scope.editUser = function(){
-  //   // $scope.user.id = $localStorage.user.id
-  //   $http.put('/api/users', $scope.user).then(function(data){
-  //     console.log(data)
-  //   })
-  // }
 }]);

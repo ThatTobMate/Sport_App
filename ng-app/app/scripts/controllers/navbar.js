@@ -8,33 +8,10 @@
  * Controller of the sportsAppApp
  */
 angular.module('sportsAppApp')
-  .controller('NavBarCtrl', function ($scope, $localStorage, User) {
+  .controller('NavBarCtrl', function ($scope, $localStorage, User, Auth) {
 
-    // User.currentUser().then(function(data){
-    //   if(data.data){
-    //     $scope.user = data.data
-    //   }
-       
-    // })
 
-    // $scope.signedIn = function(){
-    //   if($scope.user){
-    //     return true;
-    //   }else{
-    //     return false;
-    //   };
-    // };
+    $scope.signedIn = Auth.isLoggedIn();
 
-    // $scope.getUsers = function(){
-    //   User.getUsers().then(function(data){
-    //      console.log(data)
-    //   })
-    // }
-
-    // $scope.logout = function(){
-    //   $localStorage.$reset();
-    //   delete $scope.user
-    //   $scope.signedIn = false
-    // }
 
   });

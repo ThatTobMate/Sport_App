@@ -8,7 +8,7 @@
  * Controller of the sportsAppApp
  */
 angular.module('sportsAppApp')
-  .controller('MainCtrl', function ($scope, $http, $localStorage, User) {
+  .controller('MainCtrl', function ($scope, $http, $localStorage, User, Auth) {
     // $scope.get = function(){
       
 
@@ -25,6 +25,12 @@ angular.module('sportsAppApp')
     //   })
     // }
 
+    $scope.getMe = Auth.getUser().then(function(data){
+      debugger;
+      $scope.user = data;
+    })
+
+    // $scope.logout = Auth.logout();
     // $scope.logout = function(){
     //   $localStorage.$reset();
     //   $scope.user = {};
